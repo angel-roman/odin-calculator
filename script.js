@@ -84,10 +84,22 @@ function clearAll(){
     numInMem = "0";
     num2 = "0";
     operator = "";
+    lastPressed = "";
 }
 
+function addDot(){
+    let check = display.textContent.includes(".");
+    if(!check){
+        display.textContent += ".";
+    }
+    lastPressed = "num";
+}
 
-
+function changeSign(){
+    if(lastPressed != "op"){
+        display.textContent = parseFloat(display.textContent) * (-1);
+    }
+}
 
 
 
