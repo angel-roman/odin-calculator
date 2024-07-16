@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <textarea name="" id="display" readonly maxlength="12" rows="1">0</textarea>
+        <button class="number" onclick="numberPressed(7)">7</button>
+        <button class="number" onclick="numberPressed(8)">8</button>
+        <button class="number" onclick="numberPressed(9)">9</button>
+        <button class="operator" onclick="getOperator(`div`)">/</button>
+
+        <button class="number" onclick="numberPressed(4)">4</button>
+        <button class="number" onclick="numberPressed(5)">5</button>
+        <button class="number" onclick="numberPressed(6)">6</button>
+        <button class="operator" onclick="getOperator(`mul`)">×</button>
+
+        <button class="number" onclick="numberPressed(1)">1</button>
+        <button class="number" onclick="numberPressed(2)">2</button>
+        <button class="number" onclick="numberPressed(3)">3</button>
+        <button class="operator" onclick="getOperator(`min`)">-</button>
+
+        <button onclick="numberPressed(0)">0</button>
+        <button onclick="clearAll()">C</button>
+        <button onclick="getResult()">=</button>
+        <button class="operator" onclick="getOperator(`add`)">+</button>
+    </main>
+</body>
+</html>
