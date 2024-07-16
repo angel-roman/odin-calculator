@@ -1,7 +1,6 @@
 const display = document.getElementById("display");
 var operatorPressed = false;
 var pendingOp = false;
-var num1 = "0";
 var num2 = "0";
 var numInMem = "0";
 var operator = "";
@@ -10,6 +9,9 @@ var result = 0.0;
 
 
 function numberPressed(num){
+    if(display.textContent == "Infinity"){
+        clearAll();
+    }
     switch(lastPressed){
         case "": display.textContent = num;
                 break;
@@ -23,7 +25,11 @@ function numberPressed(num){
     lastPressed = "num";
 }
 
+
 function getOperator(op){
+    if(display.textContent == "Infinity"){
+        clearAll();
+    }
     switch(op){
         case "add": operator = "add";
             break;
@@ -39,6 +45,9 @@ function getOperator(op){
 }
 
 function getResult(){
+    if(display.textContent == "Infinity"){
+        clearAll();
+    }
     if(lastPressed == "num"){
         num2 =  display.textContent;
         switch(operator){
@@ -63,14 +72,19 @@ function getResult(){
             case "div": result = parseFloat(result) / parseFloat(num2);
                 break;
         }
-    
     }
     display.textContent = result.toString();
     lastPressed = "equal";
     console.log(lastPressed);
 }
 
-
+function clearAll(){
+    display.textContent = "0";
+    operatorPressed = false;
+    numInMem = "0";
+    num2 = "0";
+    operator = "";
+}
 
 
 
