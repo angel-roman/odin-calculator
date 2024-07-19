@@ -100,3 +100,26 @@ function changeSign(){
         display.textContent = parseFloat(display.textContent) * (-1);
     }
 }
+
+function deleteNum(){
+    
+    if(lastPressed == "num"){
+        let txt = display.textContent;
+        let minSignus = txt.includes("-");
+        console.log(minSignus);
+        let count = txt.length;
+        if(count ==2 && minSignus){
+            display.textContent = "0";
+            lastPressed = "";
+        }
+        if(count <= 1 && !minSignus){
+            display.textContent = "0";
+            lastPressed = "";
+        }
+        else{
+            txt = txt.substring(0, count-1);
+            display.textContent = txt;
+            console.log(txt);
+        }
+    }
+}
